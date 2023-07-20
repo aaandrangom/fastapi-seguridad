@@ -1,4 +1,3 @@
-from sys import audit, int_info
 from typing import Optional
 from pydantic import BaseModel
 from datetime import datetime
