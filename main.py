@@ -15,6 +15,7 @@ app = FastAPI()
 async def index():
     try:
         conn = bd.OpenConection()
+        conn.execute("select * from tb_user")
         return "Conexión exitosa a la base de datos."
     except Exception as e:
         return f"Error al conectarse a la base de datos: {e}"
