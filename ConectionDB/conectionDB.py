@@ -26,7 +26,7 @@ class dbConection():
       conn = pyodbc.connect(self.GetConectionString())
       return conn
     except Exception as e:
-      return {"ERROR FATAL": "ERROR AL CONECTAR LA BASE DE DATOS", "ERROR MESSAGE": str(e)}
+      raise Exception("ERROR FATAL: ERROR AL CONECTAR LA BASE DE DATOS", str(e))
 
   def CloseConection(self, conn):
     conn.close()
