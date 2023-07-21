@@ -13,7 +13,7 @@ class dbConection():
   def GetConectionString(self):
     # Cadena de conexión
     conn_str = (
-      "DRIVER={ODBC Driver 17 for SQL Server};"
+      "DRIVER={SQL Server};"
       f"SERVER={self.server},{1433};"
       f"DATABASE={self.database};"
       f"UID={self.user};"
