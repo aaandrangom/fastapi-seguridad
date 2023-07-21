@@ -24,6 +24,7 @@ class dbConection():
   def OpenConection(self):
     try:
       conn = pyodbc.connect(self.GetConectionString())
+      conn.autocommit = True
       return conn
     except Exception as e:
       raise Exception("ERROR FATAL: ERROR AL CONECTAR LA BASE DE DATOS", str(e))
