@@ -11,16 +11,6 @@ from ConectionDB.conectionDB import bd
 
 app = FastAPI()
 
-@app.get("/")
-async def index():
-    try:
-        conn = bd.OpenConection()
-        return conn
-    except Exception as e:
-        return f"Error al conectarse a la base de datos: {e}"
-
-
-
 app.include_router(user_routes, prefix="/api")
 app.include_router(role_user_routes, prefix="/api")
 app.include_router(role_routes, prefix="/api")
